@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * putchar
+ * in the main function i use the putchar funchtion
  *
- * Return: Always 0 (Success)
+ * the return is 0
  */
 int main(void)
 {
