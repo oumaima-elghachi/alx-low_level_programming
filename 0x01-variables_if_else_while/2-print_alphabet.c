@@ -1,9 +1,8 @@
 #include <stdio.h>
-
 /**
- * in the main function i use the putchar funchtion
+ * main - Entry point
  *
- * the return is 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
