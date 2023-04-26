@@ -2,6 +2,7 @@
 
 /**
  * _islower - function that checks for lowercase character
+ * c: the return value.
  *
  * Return: 1 for the lowercase and 0 for the capital
  */
@@ -9,10 +10,10 @@
 int _islower(int c)
 {
 	if (c >= 'a' && c <= 'z')
-	{ 
+	{
 		return (1);
 	}
-	else 
+	else
 	{
 		return (0);
 	}
