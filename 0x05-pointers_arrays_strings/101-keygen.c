@@ -1,49 +1,48 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-void randomPasswordGeneration(int N)
+/**
+ * main - generate random valid pass.
+ * Return: return 0.
+ */
+
+int main(void)
 {
-	int i = 0;
-	int randomizer = 0;
+	char password[84];
+	int index = 0, sum = 0, diff_half1, diff_half2;
 
-	srand((unsigned int)(time(NULL)));
-	char numbers[] = "0123456789";
-	char letter[] = "abcdefghijklmnoqprstuvwyzx";
-	char LETTER[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
-	char symbols[] = "!@#$^&*?";
-	char password[N];
-	randomizer = rand() % 4;
-	for (i = 0; i < N; i++) {
-  
-        if (randomizer == 1) {
-            password[i] = numbers[rand() % 10];
-            randomizer = rand() % 4;
-            printf("%c", password[i]);
-        }
-        else if (randomizer == 2) {
-            password[i] = symbols[rand() % 8];
-            randomizer = rand() % 4;
-            printf("%c", password[i]);
-        }
-        else if (randomizer == 3) {
-            password[i] = LETTER[rand() % 26];
-            randomizer = rand() % 4;
-            printf("%c", password[i]);
-        }
-        else {
-            password[i] = letter[rand() % 26];
-            randomizer = rand() % 4;
-            printf("%c", password[i]);
-        }
-    }
-}
+	srand(time(0));
 
-int main()
-{
-	int N = 10;
-
-	randomPasswordGeneration(N);
-	return 0;
+	while (sum < 2772)
+	{
+		password[index] = 33 + rand() % 94;
+		sum += password[index++];
+	}
+	password[index] = '\0';
+	if (sum != 2772)
+	{
+		diff_half1 = (sum - 2772) / 2;
+		diff_half2 = (sum - 2772) / 2;
+		if((sum - 2772) % 2 != 0)
+		diff_half1++;
+		for (index = 0; password[index]; index++)
+		{
+			if (password[index] >= (33 + diff_half1))
+			{
+				password[index] -= diff_half1;
+				break;
+			}
+		}
+		for (index = 0; password[index]; index++)
+		{
+			if (password[index] >= (33 + diff_half2))
+			{
+				password[index] -= diff_half2;
+				break;
+			}
+		}
+	}
+	printf("%s", password);
+	return (0);
 }
