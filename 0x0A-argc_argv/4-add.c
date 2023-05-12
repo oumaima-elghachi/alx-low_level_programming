@@ -5,8 +5,8 @@
 /**
  * check_num - check - string there are digit
  * @str: array str
- * 
- * Return: Always 0 (success)
+ *
+ * Return: Always 0 (Success)
  */
 int check_num(char *str)
 {
@@ -36,6 +36,7 @@ int check_num(char *str)
  */
 
 int main(int argc, char *argv[])
+
 {
 
 	/*Declaring variables*/
