@@ -1,1 +1,1 @@
-More functions, more nested loops
+this is for pointer arrays and strings project
